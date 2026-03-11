@@ -1,5 +1,4 @@
 """
-app/core/config.py
 
 Why pydantic-settings?
   - Reads from environment variables AND .env files automatically
