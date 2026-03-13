@@ -17,7 +17,7 @@ With vectors, "tower height is 330m" matches "structure is 330 metres tall".
 """
 import uuid
 from datetime import datetime, timezone
-from sqlalchemy import String, Float, DateTime, Text, ForeignKey, Integer
+from sqlalchemy import String, DateTime, Text, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from pgvector.sqlalchemy import Vector

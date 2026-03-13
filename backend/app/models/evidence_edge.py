@@ -16,7 +16,7 @@ The UI will render supporting edges in green, contradicting in red.
 """
 import uuid
 from datetime import datetime, timezone
-from sqlalchemy import String, Float, DateTime, Text, ForeignKey, Enum as SAEnum
+from sqlalchemy import Float, DateTime, Text, ForeignKey, Enum as SAEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID
 import enum

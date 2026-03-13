@@ -27,7 +27,7 @@ import httpx
 import trafilatura
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from urllib.parse import quote_plus, urlparse
+from urllib.parse import urlparse
 
 from app.core.config import get_settings
 from app.models.source import Source, SourceType

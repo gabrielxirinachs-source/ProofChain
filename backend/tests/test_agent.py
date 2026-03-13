@@ -213,6 +213,11 @@ class TestEvaluateNode:
 # ── Integration Test ──────────────────────────────────────────────────────────
 
 @pytest.mark.integration
+@pytest.mark.skipif(
+    not __import__('os').environ.get('OPENAI_API_KEY', '').startswith('sk-') or
+    __import__('os').environ.get('OPENAI_API_KEY', '') == 'sk-test-placeholder',
+    reason="Requires a real OpenAI API key"
+)
 async def test_full_agent_run():
     """
     Run the complete agent loop on a real claim.
