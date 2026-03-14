@@ -1,19 +1,15 @@
 """
 app/api/health.py
 
-A health check endpoint is standard practice for any production service.
-Load balancers and container orchestrators (like Fly.io, Kubernetes) ping
-this to know if your service is alive and ready to receive traffic.
-
-Two patterns:
-  - /health/live  → "Is the process running?" (liveness)
-  - /health/ready → "Is it ready to serve traffic?" (readiness — checks DB, Redis)
+Health check endpoints — used by load balancers and CI to verify
+the service is alive and all dependencies are reachable.
 """
 from fastapi import APIRouter
 from pydantic import BaseModel
 from datetime import datetime, timezone
 
 from app.core.config import get_settings
+from app.services.cache import check_redis_health
 
 router = APIRouter()
 settings = get_settings()
@@ -34,7 +30,7 @@ class ReadinessResponse(BaseModel):
 
 @router.get("/health/live", response_model=HealthResponse)
 async def liveness():
-    """Basic liveness — just confirms the process is up."""
+    """Basic liveness — confirms the process is up."""
     return HealthResponse(
         status="ok",
         app=settings.APP_NAME,
@@ -48,11 +44,13 @@ async def liveness():
 async def readiness():
     """
     Readiness — checks all dependencies.
-    Phase 2: will add real DB + Redis ping checks here.
+    Returns degraded if Redis is unreachable (DB check added in Phase 7).
     """
+    redis_status = await check_redis_health()
+
     checks = {
-        "database": "not_configured",  # TODO: Phase 2
-        "redis": "not_configured",      # TODO: Phase 2
+        "database": "not_configured",
+        "redis": redis_status,
     }
 
     all_ok = all(v in ("ok", "not_configured") for v in checks.values())

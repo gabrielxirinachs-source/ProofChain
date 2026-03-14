@@ -53,11 +53,11 @@ React UI — Interactive Evidence Graph (supporting ✅ / contradicting ❌ edge
 ## 🗺️ Development Roadmap
 
 - [x] **Phase 1** — Project scaffold, Docker, FastAPI skeleton
-- [ ] **Phase 2** — Graph-first evidence store (Postgres schema + pgvector)
-- [ ] **Phase 3** — Wikidata knowledge graph retrieval
-- [ ] **Phase 4** — Web retrieval completion (Playwright + trafilatura)
-- [ ] **Phase 5** — MDP-style LangGraph agent loop
-- [ ] **Phase 6** — Verification API (`/verify` endpoint)
+- [x] **Phase 2** — Graph-first evidence store (Postgres schema + pgvector)
+- [x] **Phase 3** — Wikidata knowledge graph retrieval
+- [x] **Phase 4** — Web retrieval completion (Playwright + trafilatura)
+- [x] **Phase 5** — MDP-style LangGraph agent loop
+- [x] **Phase 6** — Verification API (`/verify` endpoint)
 - [ ] **Phase 7** — Observability + production deploy
 - [ ] **Phase 8** — React frontend with interactive evidence graph
 
