@@ -1,0 +1,41 @@
+# fly.toml — Fly.io deployment configuration
+#
+# Fly.io is a platform that runs Docker containers close to your users.
+# This file tells Fly.io how to run ProofChain in production.
+#
+# Deploy with: fly deploy
+# View logs:   fly logs
+# SSH in:      fly ssh console
+
+app = "proofchain-api"
+primary_region = "mia"          # Miami — closest to your location
+
+[build]
+  dockerfile = "backend/Dockerfile"
+
+[env]
+  ENV = "production"
+  PORT = "8080"
+
+# The [http_service] section configures the public-facing HTTP server
+[http_service]
+  internal_port = 8080
+  force_https = true            # Redirect HTTP → HTTPS automatically
+  auto_stop_machines = true     # Scale to zero when no traffic (saves money)
+  auto_start_machines = true    # Wake up on first request
+  min_machines_running = 0
+
+  # Health check — Fly.io uses this to know when the app is ready
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    path = "/health/live"
+    protocol = "http"
+    timeout = "5s"
+
+# Machine size — start small, scale up if needed
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512

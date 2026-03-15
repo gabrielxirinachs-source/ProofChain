@@ -9,13 +9,23 @@ from app.core.config import get_settings
 from app.api import health
 from app.api import verify
 
-
 settings = get_settings()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """
+    Startup: initialize telemetry
+    Shutdown: cleanup
+    """
     print(f"🔗 Starting {settings.APP_NAME} v{settings.APP_VERSION} [{settings.ENV}]")
+
+    # Initialize OpenTelemetry tracing
+    # Only in non-test environments to keep tests clean
+    if settings.ENV != "test":
+        from app.core.telemetry import setup_telemetry
+        setup_telemetry(app)
+
     yield
     print("🔗 ProofChain shutting down...")
 
