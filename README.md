@@ -1,6 +1,7 @@
 # 🔗 ProofChain Fact-Check
 
 **🌐 Live API:** https://proofchain-api.fly.dev/docs
+**🖥️ Live App:** https://proof-chain-sable.vercel.app
 
 > A multi-source, multi-agent fact-checking engine that produces **auditable evidence graphs** instead of "trust me" summaries.
 
