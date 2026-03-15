@@ -13,8 +13,7 @@
 name: Deploy
 
 on:
-  push:
-    branches: ["main"]
+  workflow_dispatch:    # Only trigger manually when ready
 
 # Only run deploy after CI passes
 jobs:
