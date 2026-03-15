@@ -1,5 +1,7 @@
 # 🔗 ProofChain Fact-Check
 
+**🌐 Live API:** https://proofchain-api.fly.dev/docs
+
 > A multi-source, multi-agent fact-checking engine that produces **auditable evidence graphs** instead of "trust me" summaries.
 
 ProofChain verifies claims by assembling a structured chain of evidence from open knowledge graphs + live web sources — every verdict is backed by a traceable, inspectable graph of facts.
