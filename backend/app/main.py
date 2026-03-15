@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import get_settings
 from app.api import health
 from app.api import verify
-from app.db.session import engine  # Phase 2: DB connection
+
 
 settings = get_settings()
 

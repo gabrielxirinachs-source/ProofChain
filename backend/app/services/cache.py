@@ -17,7 +17,7 @@ Cache key design:
 import json
 import hashlib
 import redis.asyncio as aioredis
-from typing import Any
+
 
 from app.core.config import get_settings
 
