@@ -59,7 +59,7 @@ React UI — Interactive Evidence Graph (supporting ✅ / contradicting ❌ edge
 - [x] **Phase 5** — MDP-style LangGraph agent loop
 - [x] **Phase 6** — Verification API (`/verify` endpoint)
 - [x] **Phase 7** — Observability + production deploy
-- [ ] **Phase 8** — React frontend with interactive evidence graph
+- [x] **Phase 8** — React frontend with interactive evidence graph
 
 ---
 

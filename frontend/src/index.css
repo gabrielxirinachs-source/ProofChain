@@ -1,0 +1,68 @@
+/* ── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Forensic dark palette */
+  --bg-deep:      #080c14;
+  --bg-panel:     #0d1422;
+  --bg-card:      #111827;
+  --bg-hover:     #1a2333;
+  --border:       #1e2d45;
+  --border-bright:#2a3f5f;
+
+  /* Text */
+  --text-primary: #e8edf5;
+  --text-secondary:#8899bb;
+  --text-muted:   #4a5a7a;
+
+  /* Accent colors */
+  --amber:        #f59e0b;
+  --amber-dim:    #78490a;
+  --crimson:      #ef4444;
+  --crimson-dim:  #7f1d1d;
+  --emerald:      #10b981;
+  --emerald-dim:  #064e35;
+  --blue:         #3b82f6;
+  --blue-dim:     #1e3a5f;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  line-height: 1.6;
+  /* Subtle grid texture */
+  background-image:
+    linear-gradient(rgba(30,45,69,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,45,69,0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--border); }
+  50%       { border-color: var(--blue); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
