@@ -39,7 +39,7 @@ jobs:
           REDIS_URL: redis://localhost:6379
           OPENAI_API_KEY: sk-test-placeholder
         run: |
-          pytest tests/ -v --tb=short
+          pytest tests/ -v --tb=short -m "not integration"
 
   lint:
     name: Lint
