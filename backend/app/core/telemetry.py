@@ -76,9 +76,6 @@ def setup_telemetry(app) -> None:
     # Create our module-level tracer
     tracer = trace.get_tracer("proofchain")
 
-    # Auto-instrument FastAPI — adds spans for every request automatically
-    # You get: HTTP method, route, status code, latency for free
-    FastAPIInstrumentor.instrument_app(app)
 
     # Auto-instrument httpx — adds spans for every outbound HTTP call
     # This traces our Wikidata + web retrieval calls automatically
