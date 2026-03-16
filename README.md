@@ -43,6 +43,14 @@ React UI — Interactive Evidence Graph (supporting ✅ / contradicting ❌ edge
 
 ---
 
+## 📸 Screenshots
+
+![ProofChain UI](docs/screenshots/homepage.png)
+![Verdict Result](docs/screenshots/verdict.png)
+![Evidence Graph](docs/screenshots/graph.png)
+![Citation List](docs/screenshots/Citations.png)
+![API Docs](docs/screenshots/api-docs.png)
+
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
