@@ -3,6 +3,13 @@
 **🌐 Live API:** https://proofchain-api.fly.dev/docs
 **🖥️ Live App:** https://proof-chain-sable.vercel.app
 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+
 > A multi-source, multi-agent fact-checking engine that produces **auditable evidence graphs** instead of "trust me" summaries.
 
 ProofChain verifies claims by assembling a structured chain of evidence from open knowledge graphs + live web sources — every verdict is backed by a traceable, inspectable graph of facts.
@@ -49,7 +56,7 @@ React UI — Interactive Evidence Graph (supporting ✅ / contradicting ❌ edge
 | Observability | OpenTelemetry |
 | Containerization | Docker + Docker Compose |
 | Frontend | Vite + React |
-| Deployment | Fly.io / Render |
+| Deployment | Fly.io (API) + Vercel (Frontend) |
 
 ---
 
@@ -77,7 +84,7 @@ React UI — Interactive Evidence Graph (supporting ✅ / contradicting ❌ edge
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/proofchain.git
+git clone https://github.com/gabrielxirinachs-source/ProofChain.git
 cd proofchain
 
 # Copy environment variables
